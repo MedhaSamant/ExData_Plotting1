@@ -13,8 +13,8 @@ par(mfrow=c(2,2))
 plot( newEnvData$newField , as.numeric(newEnvData$Global_active_power), 
       ylab ="Global Active Power",
       type = "s",
-      ylim = c(0,8),
-      xlab=""
+      xlab="",
+      cex.lab = 0.8
 )
 
 ## Create Plot2
@@ -22,34 +22,43 @@ plot( newEnvData$newField , as.numeric(newEnvData$Voltage),
       ylab ="Voltage",
       type = "s",
       ylim = c(234,246),
-      xlab="datetime"
+      xlab="datetime",
+      cex.lab = 0.8
 )
 
 ## Create Plot3
 plot( newEnvData$newField , as.numeric(newEnvData$Sub_metering_1),  type = "n", col="black",  
-     ylim = c(0,40), ylab = "Energy sub meteing",xlab="")
+      ylab = "Energy sub metering",xlab="",  cex.lab = 0.8)
+##plot( newEnvData$newField , as.numeric(newEnvData$Sub_metering_1),  type = "n", col="black",  
+##     ylim = c(0,40), ylab = "Energy sub meteing",xlab="")
 
 
 lines( newEnvData$newField, newEnvData$Sub_metering_1,  type = "l" ,col="black")
 lines( newEnvData$newField, newEnvData$Sub_metering_2,  type = "l", col="red")
 lines( newEnvData$newField, newEnvData$Sub_metering_3,  type = "l", col="blue")
 
+##legend("topright",col = c("black", "red", "blue"),lty=1,
+##       legend=c("Sub_metering_1","Sub_metering_2","Sub_metering_3"),
+##       y.intersp=0.5, 
+##       cex=0.5,
+##       adj=0,
+##       xjust=0,
+##       bty="n")
 legend("topright",col = c("black", "red", "blue"),lty=1,
        legend=c("Sub_metering_1","Sub_metering_2","Sub_metering_3"),
-       y.intersp=0.5,
-       ##text.width = strwidth("Sub_metering_1"), 
-       cex=0.5,
-       adj=0,
-       xjust=0,
-       bty="n")
-
+       bty = "n",
+       y.intersp=0.4,
+     ##  text.width = strwidth("Sub_metering_1"),
+       adj=0.1,
+       xjust=0,cex=0.8)
 
 ## Create Plot4
 plot( newEnvData$newField , as.numeric(newEnvData$Global_reactive_power), 
       ylab ="Global_reactive_power",
       type = "l",
       ylim = c(0.0,0.5),
-      xlab="datetime"
+      xlab="datetime",
+      cex.lab = 0.8
 )
 
 ## save to png file

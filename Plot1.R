@@ -11,6 +11,7 @@ hist(as.numeric(newEnvData$Global_active_power),
      main = "Global Active Power",
      col = "red",
      ylim = c(0,1200),
+     cex.lab = 0.8
      )
 
 ## save to png file

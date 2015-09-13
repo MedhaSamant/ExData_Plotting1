@@ -12,8 +12,8 @@ newEnvData$newField <-as.POSIXct(strptime(newEnvData$newCol , "%d/%m/%Y %H:%M:%S
 plot( newEnvData$newField , as.numeric(newEnvData$Global_active_power), 
       ylab ="Global Active Power (kilowatts)",
       type = "s",
-      ylim = c(0,8),
-      xlab=""
+      xlab="",
+      cex.lab = 0.8
 )
 
 ## save to png file

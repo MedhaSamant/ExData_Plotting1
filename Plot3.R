@@ -12,7 +12,7 @@ newEnvData$newField <-as.POSIXct(strptime(newEnvData$newCol , "%d/%m/%Y %H:%M:%S
 plot( newEnvData$newField , as.numeric(newEnvData$Sub_metering_3),  type = "n", col="blue")
 plot( newEnvData$newField , as.numeric(newEnvData$Sub_metering_2),  type = "n", col="red")
 plot( newEnvData$newField , as.numeric(newEnvData$Sub_metering_1),  type = "n", col="black",  
-      ylim = c(0,40), ylab = "Energy sub metering",xlab="")
+      ylab = "Energy sub metering",xlab="",cex.lab = 0.8)
 
 
 ## Create correct dateTime format
@@ -24,9 +24,9 @@ lines( newEnvData$newField, newEnvData$Sub_metering_3,  type = "l", col="blue")
 legend("topright",col = c("black", "red", "blue"),lty=1,
      legend=c("Sub_metering_1","Sub_metering_2","Sub_metering_3"),
        y.intersp=0.6,
-     ##text.width = strwidth("Sub_metering_1   "),
+     text.width = strwidth("Sub_metering_1"),
        adj=0,
-      xjust=0,cex=0.5)
+      xjust=0,cex=0.8)
 
 
 ## save to png file
